@@ -7,7 +7,6 @@
     <title>Aprenda CSS Grid - Aula Prática</title>
 
     <style>
-        /*  1. RESET BÁSICO E ESTILOS GERAIS */
         * {
             margin: 0;
             padding: 0;
@@ -21,7 +20,6 @@
             padding: 20px;
         }
 
-        /* Estilização dos Blocos do Layout */
         header,
         nav,
         main,
@@ -39,13 +37,17 @@
 
 
 
-        /* Cores distintas para destacar cada área do layout */
         .header {
             background: linear-gradient(135deg, #600000, #800000);
         }
 
         .menu {
             background: #1a1a24;
+            transition: transform 0.2s;
+        }
+
+        .menu:hover {
+            transform: scale(1.05);
         }
 
         .main {
@@ -58,7 +60,6 @@
             background: linear-gradient(135deg, #1c1a17, #2c251e);
         }
 
-        /* Estilo dos cards que estarão DENTRO da tag <main> */
         .card {
             background-color: #23232e;
             color: #3730a3;
@@ -71,7 +72,7 @@
         }
 
         .card:hover {
-            transform: scale(1.05); /* Efeito mágico ao passar o mouse */
+            transform: scale(1.05);
         }
 
         .layout-principal {
