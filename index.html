@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprenda CSS Grid - Aula Prática</title>
+
+    <style>
+        /*  1. RESET BÁSICO E ESTILOS GERAIS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121216;
+            color: #1c1e21;
+            padding: 20px;
+        }
+
+        /* Estilização dos Blocos do Layout */
+        header,
+        nav,
+        main,
+        footer {
+            padding: 20px;
+            border-radius: 12px;
+            color: #ffffff;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+
+
+        /* Cores distintas para destacar cada área do layout */
+        .header {
+            background: linear-gradient(135deg, #600000, #800000);
+        }
+
+        .menu {
+            background: #1a1a24;
+        }
+
+        .main {
+            background-color: #ffffff;
+            color: #333;
+            border: 2px dashed #cbd5e1;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #1c1a17, #2c251e);
+        }
+
+        /* Estilo dos cards que estarão DENTRO da tag <main> */
+        .card {
+            background-color: #23232e;
+            color: #3730a3;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Efeito mágico ao passar o mouse */
+        }
+
+        .layout-principal {
+            display: grid;
+
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 1fr 3fr;
+
+            gap: 15px;
+
+            grid-template-areas:
+                "header header"
+                "main menu"
+                "footer footer";
+
+            min-height: calc(100vh - 40px);
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .menu {
+            grid-area: menu;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+
+        .cards-grid {
+            display: grid;
+            width: 100%;
+
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        @media(max-width: 768px) {
+            .layout-principal {
+                grid-template-columns: 1fr;
+
+                grid-template-areas: none
+                    "header"
+                    "menu"
+                    "main"
+                    "footer";
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-widht: 480px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        img {
+            width: 100px;
+            border-radius: 7px;
+        }
+
+        .logo {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout-principal">
+        <header class="header">
+            Onde a magia dos livros e filmes ganha vida no mundo digital.
+        </header>
+
+        <nav class="menu">
+            <img class="logo"
+                src="https://static.wikia.nocookie.net/hpnovomundo/images/d/d8/Hogwarts_Emblema.png/revision/latest?cb=20140915085431&path-prefix=pt-br"
+                alt="">
+        </nav>
+
+        <main>
+            <div class="cards-grid">
+                <div class="card">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy2wvmrr7irzH5W579MkEHLam3_nhxG2Tsvoc9DSBFBJMc7BFmXGG4eHHZ&s=10"
+                        alt="">
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6CWOEmj5nVlpQALJzKEkejCrzt2QAHO4Nl0jn1GPnkjiOZn0SiRu_1vHI&s=10"
+                        alt="">
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuXrSm0CypTYt7nImnz74uufSw8usxb5Gfi6eLgor5UZtr7-li85A9Dm8&s=10"
+                        alt="">
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQLDvjpS1SVi1r_boLj5Gmu_mWP_D18Q_6dTjBExBUKFrzd-rrGUsIQqA&s=10"
+                        alt="">
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq44R50Xw-C6FRNJp8cfHmEgR0KAeq6bSbzphyj85D0U9t-V011M_wYC7t&s=10"
+                        alt="">
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR81nt5AQ8EDf2DKol9PIgKSn91vX42EZ7qw0KWnBMvHHRDAM-qy-dTONo&s=10"
+                        alt="">
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm5spVhCdyNMOSdwHriIGFGIN_joSE23ZpDeJfSFnwplVJII7Kj7l2F7b9&s=10"
+                        alt="">
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMc4a7QqO_5JqWhkVggKpP_TZddLszTXtzQiEgy0n8YbNpX4fSMXPIcZs6&s=10"
+                        alt="">
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMc4a7QqO_5JqWhkVggKpP_TZddLszTXtzQiEgy0n8YbNpX4fSMXPIcZs6&s=10"
+                        alt="">
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZUWY21g0fNFEvKzrOoM21FVgCXe6AX6mF-Jgva91qSfwn8LzKXAd9d1s&s=10"
+                        alt="">
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </main>
+
+        <footer class="footer">
+            Desenvolvido com uma pitada de magia e muito café...
+        </footer>
+    </div>
+</body>
