@@ -1,0 +1,6 @@
+    No CSS grid, é possível usar a mesma analogia para entender o conceito de matrizes em python, uma matriz é separada por linhas e colunas,
+assim como o Grid, onde cada elemento tem sua coordernada e local exato. A grande vantagem disso é que o layout se adapta sozinho.
+    Se você decidir adicionar um novo elemento na página, como um novo card, o Grid reorganiza o espaço e encaixa o novo item no lugar
+certo sem que você precise fazer uma grande mudança no seu CSS ou até reescrevar tudo novamente.
+    Isso traz uma enorme otimização de tempo. Em vez de você ficar calculando o tamanho de cada caixinha na tela manualmente,
+você apenas define a estrutura para todos os elementos que serão adicionados já serem encaixados de forma igual e automática.   
